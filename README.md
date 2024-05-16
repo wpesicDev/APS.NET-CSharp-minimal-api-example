@@ -1,1 +1,1 @@
-# m347-minimal-api
+# Simple APS.NET minimal API example
