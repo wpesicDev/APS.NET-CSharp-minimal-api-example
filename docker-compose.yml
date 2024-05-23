@@ -5,3 +5,15 @@ services:
     restart: always
     ports:
       - 5001:5001
+    depends_on:
+      - mongo
+    environment:
+      DatabaseSettings__ConnectionString: "mongodb://mongoadmin:secret@mongo:27017"
+  mongo:
+    image: mongo:latest
+    container_name: some-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "mongoadmin"
+      MONGO_INITDB_ROOT_PASSWORD: "secret"    
